@@ -1,0 +1,9 @@
+<h1>Leaflet Radar using Environment Canada WMS (Web Map Services)</h1>
+
+<div class="map-container" leaflet [leafletOptions]="options" baseMapType='sat' (leafletMapReady)="onMapReady($event)">
+</div>
+
+<div *ngIf="isShowRadar">
+	<button (click)="toggleRadarPlay()">{{isPlaying ? 'Stop' : 'Play'}}</button>
+	<span *ngIf="currentTime">{{currentTime.toISOString().split('.')[0]+'Z'}}</span>
+</div>
